@@ -2,7 +2,7 @@
 
 This repository include SQL projects.
 
-# SQL Start
+## SQL Start
 
 This SQL project include create dataset of customers and products of a online shop.
 
