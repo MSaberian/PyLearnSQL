@@ -72,7 +72,11 @@ def search():
 
 def buy_new_product(shopper_products, customer_name,ProductId):
     result = my_coursor.execute(f'SELECT Count FROM products WHERE ProductId = {ProductId}')
-    count = float(result.fetchone()[0])
+    resultfetchone = result.fetchone()
+    if resultfetchone == None:
+        print('this Id is invalid')
+        return
+    count = float(resultfetchone[0])
     result = my_coursor.execute(f'SELECT Price FROM products WHERE ProductId = {ProductId}')
     price = float(result.fetchone()[0])
     result = my_coursor.execute(f'SELECT Name FROM products WHERE ProductId = {ProductId}')
